@@ -12,5 +12,62 @@
 }
 
 /*************************************************
-    STILI GENERALI
+    COLORS
  *************************************************/
+.ms_bg-color-aqua {
+    background-color: #009688;
+    min-height: 150px;
+    min-width: 100%;
+}
+
+.ms_bg-color-grey {
+    background-color: #d8dbd6;
+    min-height: calc(100vh - 150px);
+    min-width: 100%;
+}
+
+.ms_bg-color-soft_grey {
+    background-color: #eaeaea;
+}
+
+.ms_icon-color-size {
+    color: #d5d4d3;
+    font-size: 20px;
+}
+
+.ms_bg-color-azure {
+    background-color: #8edafc;
+}
+
+.ms_color-azure {
+    color: #8edafc;
+}
+
+
+.ms_color-grey {
+    color: gray;
+}
+
+/*************************************************
+    UTILITIES
+ *************************************************/
+.ms_h-85 {
+    min-height: 85%;
+}
+
+.ms_width-50px {
+    width: 50px;
+}
+
+.ms_fontsize-12_opacity {
+    font-size: 12px;
+    opacity: 0.3;
+}
+
+/*************************************************
+    OVERFLOW
+ *************************************************/
+.chats {
+    overflow-y: auto;
+    height: 600px;
+}
