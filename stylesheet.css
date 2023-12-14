@@ -12,62 +12,152 @@
 }
 
 /*************************************************
-    COLORS
+    STILE CONTENITORI
  *************************************************/
-.ms_bg-color-aqua {
+/* Wrapper */
+#wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Background */
+.parte-verde {
+    width: 100%;
+    height: 25%;
     background-color: #009688;
-    min-height: 150px;
-    min-width: 100%;
 }
 
-.ms_bg-color-grey {
-    background-color: #d8dbd6;
-    min-height: calc(100vh - 150px);
-    min-width: 100%;
+.parte-grigia {
+    width: 100%;
+    height: 75%;
+    background-color: #dadbd4;
 }
 
-.ms_bg-color-soft_grey {
-    background-color: #eaeaea;
+/*  */
+#app {
+    display: flex;
 }
 
-.ms_icon-color-size {
-    color: #d5d4d3;
+/* Contenitore principale */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*************************************************
+    LEFT SIDE
+ *************************************************/
+/* Parte di sinistra */
+.side-bar {
+    width: 40%;
+    background-color: #dadbd4;
+    border-right: 1px solid lightgrey;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    flex-grow: 0;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
     font-size: 20px;
 }
 
-.ms_bg-color-azure {
+.icons a {
+    color: #b1b1b1;
+    margin: 0 10px;
+}
+
+.notifiche {
+    display: flex;
+    align-items: center;
     background-color: #8edafc;
+    padding: 8px;
+    flex-grow: 0;
 }
 
-.ms_color-azure {
+.icon_notifiche {
+    border-radius: 50%;
+    padding: 15px;
+    background-color: white;
+    margin: 0 5px;
+}
+
+.fa-bell-slash {
     color: #8edafc;
+    font-size: 18px;
+}
+
+.right_text {
+    margin: 0 8px;
+}
+
+.right_text a {
+    color: gray;
+    opacity: 0.6;
+    font-size: 15px;
+}
+
+.search_Chat {
+    flex-grow: 0;
+    padding: 8px;
+}
+
+.search_Chat i {
+    color: #b1b1b1;
+}
+
+.chats {
+    background-color: white;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/*************************************************
+    RIGHT SIDE
+ *************************************************/
+/* Parte di destra dei messaggi */
+.right-side {
+    width: 60%;
+    background-color: #dadbd4;
+    position: relative;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
 }
 
 
-.ms_color-grey {
-    color: gray;
+/*************************************************
+    COLORS
+ *************************************************/
+.light-gray {
+    background-color: #eaeaea;
+}
+
+.ms_color-black {
+    color: black;
 }
 
 /*************************************************
     UTILITIES
  *************************************************/
-.ms_h-85 {
-    min-height: 85%;
-}
-
-.ms_width-50px {
-    width: 50px;
-}
-
-.ms_fontsize-12_opacity {
+.ms_fs-12_opacity03 {
     font-size: 12px;
     opacity: 0.3;
-}
-
-/*************************************************
-    OVERFLOW
- *************************************************/
-.chats {
-    overflow-y: auto;
-    height: 600px;
 }

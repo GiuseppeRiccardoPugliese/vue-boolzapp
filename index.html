@@ -32,225 +32,173 @@
 
 <body>
 
-    <div id="contenitore">
+    <div id="wrapper">
 
-        <div class="ms_bg-color-aqua"></div>
+        <div class="parte-verde"> <!-- Parte di dietro verde -->
 
-        <!-- Contenitore in pos.Absolute -->
-        <main class="container position-absolute top-50 start-50 translate-middle ms_h-85">
+        </div>
 
-            <div class="row ms_bg-color-soft_grey"> <!-- TopBar -->
+        <div class="parte-grigia"> <!-- Parte di dietro grigia  -->
 
-                <!-- TopBar (left) -->
-                <div class="col-4 p-0 border-end d-flex align-items-center justify-content-between p-1">
-                    <div>
-                        <img src="Img/avatar_io.jpg" class="rounded-circle ms_width-50px" alt="">
-                        <span>Sofia</span>
-                    </div>
+        </div>
 
-                    <div>
-                        <i class="fa-solid fa-circle-notch ms_icon-color-size px-2"></i>
-                        <i class="fa-solid fa-message ms_icon-color-size px-2"></i>
-                        <i class="fa-solid fa-ellipsis-vertical ms_icon-color-size px-2"></i>
-                    </div>
-                </div>
+        <!-- Contenitore -->
+        <div class="container">
 
-                <!-- TopBar (right) -->
-                <div class="col-8 d-flex align-items-center py-1">
-                    <div>
-                        <img src="Img/avatar_1.jpg" class="rounded-circle ms_width-50px" alt="">
-                    </div>
-                    <div class="lh-1 ps-2">
-                        <span class="d-block">Michele</span>
-                        <span class="ms_fontsize-12_opacity">Ultimo accesso oggi alle 12:00</span>
-                    </div>
-                    <div>
-                        ciao
-                    </div>
-                </div>
-            </div>
+            <div id="app"> <!-- mount 4 vuejs -->
 
-            <div class="row flex-column"> <!-- Left side (Ricevi notifiche, barra di ricerca, chat) -->
+                <!-- Parte di sinistra -->
+                <div class="side-bar">
 
-                <div class="col-4 p-0">
-
-                    <!-- Ricevi notifiche di nuovi messaggi -->
-                    <div class="ms_bg-color-azure p-2 d-flex align-items-center">
-                        <i class="fa-solid fa-bell-slash bg-white rounded-circle p-3 ms_color-azure fs-5"></i>
-                        <div class="lh-1 ps-2">
-                            <span class="d-block">Ricevi notifiche di nuovi messaggi</span>
-                            <a href="#" class="ms_fontsize-12_opacity ms_color-grey">Attiva notifiche desktop</a>
+                    <div class="user light-gray"> <!-- Top ioUser -->
+                        <div>
+                            <img src="Img/avatar_io.jpg" alt="">
+                            <span>Sofia</span>
+                        </div>
+                        <div class="icons">
+                            <a href="">
+                                <i class="fa-solid fa-circle-notch"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-solid fa-message"></i>
+                            </a>
+                            <a href="">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Cerca una chat -->
-                    <div class="p-2 ms_bg-color-soft_grey">
+                    <div class="notifiche"> <!-- Ricevi notifiche di nuovi mess. -->
+                        <div class="icon_notifiche">
+                            <i class="fa-solid fa-bell-slash"></i>
+                        </div>
+                        <div class="lh-1">
+                            <span class="d-block ms_color-black">Ricevi notifiche di nuovi messaggi</span>
+                            <a href="">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+
+                    <div class="search_Chat bg-light"> <!-- Search Bar -->
                         <div class="input-group">
-                            <span class="input-group-text bg-white px-4" id="basic-addon1"><i
-                                    class="fa-solid fa-magnifying-glass ms_icon-color-size"></i></span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                                aria-label="Username" aria-describedby="basic-addon1">
+                            <button class="btn bg-white border border-light px-4" type="button" id="button-addon1"><i
+                                    class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="text" class="form-control border-light"
+                                placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon"
+                                aria-describedby="button-addon1">
                         </div>
                     </div>
 
-                    <!-- Chat -->
-                    <div class="bg-white chats">
+                    <div class="chats"> <!-- Chat dei contatti -->
+                        <ul class="list-unstyled m-0">
 
-                        <ul class="p-0 m-0 list-unstyled">
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
+                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
                                 <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
+                                    <img src="Img/avatar_1.jpg" alt="">
+                                    <div class="ms-3">
                                         <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
+                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
+                                <div>
+                                    <span class="ms_fs-12_opacity03">12:00</span>
                                 </div>
                             </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
+
+                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
                                 <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
+                                    <img src="Img/avatar_1.jpg" alt="">
+                                    <div class="ms-3">
                                         <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
+                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
+                                <div>
+                                    <span class="ms_fs-12_opacity03">12:00</span>
                                 </div>
                             </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
+
+                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
                                 <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
+                                    <img src="Img/avatar_1.jpg" alt="">
+                                    <div class="ms-3">
                                         <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
+                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
+                                <div>
+                                    <span class="ms_fs-12_opacity03">12:00</span>
                                 </div>
                             </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
+
+
+                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
                                 <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
+                                    <img src="Img/avatar_1.jpg" alt="">
+                                    <div class="ms-3">
                                         <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
+                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
+                                <div>
+                                    <span class="ms_fs-12_opacity03">12:00</span>
                                 </div>
                             </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
+
+                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
                                 <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
+                                    <img src="Img/avatar_1.jpg" alt="">
+                                    <div class="ms-3">
                                         <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
+                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
+                                <div>
+                                    <span class="ms_fs-12_opacity03">12:00</span>
                                 </div>
                             </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
+                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
                                 <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
+                                    <img src="Img/avatar_1.jpg" alt="">
+                                    <div class="ms-3">
                                         <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
+                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
+                                <div>
+                                    <span class="ms_fs-12_opacity03">12:00</span>
                                 </div>
                             </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
+                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
                                 <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
+                                    <img src="Img/avatar_1.jpg" alt="">
+                                    <div class="ms-3">
                                         <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
+                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
+                                <div>
+                                    <span class="ms_fs-12_opacity03">12:00</span>
                                 </div>
                             </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
-                                <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
-                                        <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
-                                </div>
-                            </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
-                                <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
-                                        <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
-                                </div>
-                            </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
-                                <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
-                                        <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
-                                </div>
-                            </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
-                                <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
-                                        <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
-                                </div>
-                            </li>
-                            <li class="border-bottom border-1 border-dark p-2 d-flex justify-content-between">
-                                <div class="d-flex">
-                                    <img class="rounded-circle ms_width-50px" src="Img/avatar_1.jpg" alt="">
-                                    <div class="lh-1 ps-2">
-                                        <span class="d-block">Michele</span>
-                                        <span class="ms_fontsize-12_opacity">Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex ">
-                                    <span class="ms_fontsize-12_opacity">12:00</span>
-                                </div>
-                            </li>
+
+
                         </ul>
-
                     </div>
 
+
                 </div>
+
+                <!-- Parte di destra -->
+                <div class="right-side">
+
+                </div>
+
             </div>
 
-        </main>
+        </div>
 
-        <div class="ms_bg-color-grey "></div>
+
+
     </div>
 
     <!-- JS -->
