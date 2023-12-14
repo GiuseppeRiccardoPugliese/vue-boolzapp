@@ -34,13 +34,9 @@
     background-color: #dadbd4;
 }
 
-/*  */
-#app {
-    display: flex;
-}
-
 /* Contenitore principale */
 .container {
+    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -114,19 +110,27 @@ img {
     font-size: 15px;
 }
 
-.search_Chat {
+.search_chat {
     flex-grow: 0;
     padding: 8px;
 }
 
-.search_Chat i {
+.search_chat i {
     color: #b1b1b1;
+}
+
+.search_chat input::placeholder {
+    font-size: 13px;
 }
 
 .chats {
     background-color: white;
     overflow-y: auto;
     flex-grow: 1;
+}
+
+.chats li:hover {
+    background-color: #eaeaea;
 }
 
 /*************************************************
@@ -142,6 +146,64 @@ img {
     flex-direction: column;
 }
 
+.message_container {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding: 35px;
+    background-image: url(Img/bg_chat.png);
+}
+
+.msg_spedito {
+    border-radius: 10px;
+    background-color: #d5f9ba;
+    padding: 8px;
+    position: relative;
+}
+
+.msg_ricevuto {
+    border-radius: 10px;
+    background-color: white;
+    padding: 8px;
+    position: relative;
+}
+
+.msg_time {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+}
+
+.send_message {
+    display: flex;
+    width: 100%;
+    padding: 8px;
+}
+
+.send_message .left {
+    width: 10%;
+    justify-content: center;
+}
+
+.send_message .middle {
+    width: 80%;
+    border: none;
+    border-radius: 4px;
+    padding-left: 15px;
+}
+
+.send_message .middle::placeholder {
+    font-size: 13px;
+}
+
+.send_message .right {
+    width: 10%;
+    justify-content: center;
+}
+
+.fa-microphone,
+.fa-face-smile {
+    color: #6c7374;
+}
 
 /*************************************************
     COLORS

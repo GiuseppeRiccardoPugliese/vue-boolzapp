@@ -198,4 +198,4 @@ createApp({
     mounted() {
 
     }
-}).mount("#contenitore");
+}).mount("#app");
