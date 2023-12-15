@@ -201,7 +201,8 @@
                                 <i class="fa-regular fa-face-smile"></i>
                             </a>
                         </div>
-                        <input class="middle" type="text" name="" id="" placeholder="Scrivi un messaggio">
+                        <input class="middle" type="text" name="" id="" placeholder="Scrivi un messaggio"
+                            v-model="newMessage" @keyup.enter="addMessage">
                         <div class="icons right">
                             <a href="">
                                 <i class="fa-solid fa-microphone"></i>

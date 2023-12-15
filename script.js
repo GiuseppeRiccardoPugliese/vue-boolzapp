@@ -25,6 +25,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            newMessage: '',
             activeChat: ({
                 name: '',
                 avatar: '',
@@ -197,7 +198,7 @@ createApp({
         }
     },
     methods: {
-        currentChat(index) {
+        currentChat(index) {    //Milestone 2
             // this.chats.splice(0, 1, this.contacts[index].name);
             // this.chats.splice(1, 1);
             // this.chats.push(this.contacts[index].avatar);
@@ -206,7 +207,33 @@ createApp({
                 avatar: this.contacts[index].avatar,
                 messages: this.contacts[index].messages,
             };
-        }
+        },
+        addMessage() { //Milestone 3
+            //The trim() method of String values removes whitespace from both ends of this string and returns a new string, without modifying the original string.
+            if (this.newMessage.trim() !== '') {
+                const newMsg = {
+                    date: new Date().toLocaleString(),
+                    message: this.newMessage,
+                    status: 'sent',
+                };
+
+                // Aggiungo il nuovo messaggio all'interno di activeChat, ovvero i dati forniti prima per ogni chat (nome, foto e messaggi)
+                this.activeChat.messages.push(newMsg);
+
+                // Pulisco l'input dopo che il messaggio e' stato inviato
+                this.newMessage = '';
+
+                // Simulazione della risposta dopo il delay
+                setTimeout(() => {
+                    const responseMsg = {
+                        date: new Date().toLocaleString(),
+                        message: 'Ok',
+                        status: 'received',
+                    };
+                    this.activeChat.messages.push(responseMsg);
+                }, 1000);
+            }
+        },
     },
     mounted() {
 
