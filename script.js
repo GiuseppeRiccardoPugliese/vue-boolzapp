@@ -25,6 +25,12 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            activeChat: ({
+                name: '',
+                avatar: '',
+                messages: ''
+            }),
+            // chats: ['Michele', 'img/avatar_1.jpg'],
             contacts: [
                 {
                     name: 'Michele',
@@ -191,7 +197,16 @@ createApp({
         }
     },
     methods: {
-
+        currentChat(index) {
+            // this.chats.splice(0, 1, this.contacts[index].name);
+            // this.chats.splice(1, 1);
+            // this.chats.push(this.contacts[index].avatar);
+            this.activeChat = {
+                name: this.contacts[index].name,
+                avatar: this.contacts[index].avatar,
+                messages: this.contacts[index].messages,
+            };
+        }
     },
     mounted() {
 

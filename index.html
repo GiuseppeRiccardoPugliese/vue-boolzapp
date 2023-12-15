@@ -91,7 +91,7 @@
                         <ul class="list-unstyled m-0">
 
                             <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2"
-                                v-for="(currentContact, i) in contacts" :key="i">
+                                v-for="(currentContact, i) in contacts" :key="i" @click="currentChat(i)">
                                 <div class="d-flex">
                                     <img :src="currentContact.avatar" alt="">
                                     <div class="ms-3">
@@ -152,11 +152,11 @@
                 <!-- Parte di destra -->
                 <div class="right-side">
 
-                    <div class="user light-gray"> <!-- Parte di sopra inerente al contatto -->
+                    <div class="user light-gray"> <!-- Parte di sopra inerente al contatto-->
                         <div class="d-flex">
-                            <img src="Img/avatar_1.jpg" alt="">
+                            <img :src="activeChat.avatar" alt="">
                             <div class="ms-3 d-flex flex-column justify-content-center lh-sm">
-                                <span class="d-block">Michele</span>
+                                <span class="d-block">{{activeChat.name}}</span>
                                 <span class="ms_fs-12_opacity03">Ultimo accesso oggi alle 12:00</span>
                             </div>
                         </div>
@@ -174,24 +174,25 @@
                     </div>
 
                     <div class="message_container"> <!-- Inda Chat -->
-                        <div class="row mb-2">
-                            <div class="offset-7 col-5 msg_spedito">
-                                <span>Hai portato a spasso il cane?</span>
+                        <div class="row mb-2" v-for="(message, index) in activeChat.messages" :key="index">
+                            <div
+                                :class="{ 'offset-7 col-5 msg_spedito': message.status === 'sent', 'col-5 msg_ricevuto': message.status === 'received' }">
+                                <span>{{message.message}}</span>
                                 <span class="msg_time ms_fs-12_opacity03">15:30</span>
                             </div>
                         </div>
-                        <div class="row mb-2">
+                        <!-- <div class="row mb-2">
                             <div class="offset-7 col-5 msg_spedito">
                                 <span>Hai portato a spasso il cane?</span>
                                 <span class="msg_time ms_fs-12_opacity03">15:50</span>
                             </div>
-                        </div>
-                        <div class="row mb-2">
+                        </div> -->
+                        <!-- <div class="row mb-2">
                             <div class="col-5 msg_ricevuto">
                                 <span>Tutto fatto!</span>
                                 <span class="msg_time ms_fs-12_opacity03">16:15</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="send_message light-gray"> <!-- Bottom Bar for msg -->
