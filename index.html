@@ -90,11 +90,12 @@
                     <div class="chats"> <!-- Chat dei contatti -->
                         <ul class="list-unstyled m-0">
 
-                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
+                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2"
+                                v-for="(currentContact, i) in contacts" :key="i">
                                 <div class="d-flex">
-                                    <img src="Img/avatar_1.jpg" alt="">
+                                    <img :src="currentContact.avatar" alt="">
                                     <div class="ms-3">
-                                        <span class="d-block">Michele</span>
+                                        <span class="d-block">{{currentContact.name}}</span>
                                         <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
                                     </div>
                                 </div>
@@ -103,7 +104,7 @@
                                 </div>
                             </li>
 
-                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
+                            <!-- <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
                                 <div class="d-flex">
                                     <img src="Img/avatar_2.jpg" alt="">
                                     <div class="ms-3">
@@ -141,7 +142,7 @@
                                 <div>
                                     <span class="ms_fs-12_opacity03">12:00</span>
                                 </div>
-                            </li>
+                            </li> -->
 
                         </ul>
                     </div>
@@ -193,7 +194,7 @@
                         </div>
                     </div>
 
-                    <div class="send_message light-gray">
+                    <div class="send_message light-gray"> <!-- Bottom Bar for msg -->
                         <div class="icons left">
                             <a href="">
                                 <i class="fa-regular fa-face-smile"></i>
