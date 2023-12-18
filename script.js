@@ -237,6 +237,7 @@ createApp({
             };
         },
         addMessage() { //Milestone 3
+
             //The trim() method of String values removes whitespace from both ends of this string and returns a new string, without modifying the original string.
             if (this.newMessage.trim() !== '') {
                 const newMsg = {
@@ -253,12 +254,18 @@ createApp({
 
                 // Simulazione della risposta dopo il delay
                 setTimeout(() => {
-                    const responseMsg = {
-                        date: new Date().toLocaleString(),
-                        message: 'Ok',
-                        status: 'received',
-                    };
-                    this.activeChat.messages.push(responseMsg);
+                    // Effettua una richiesta HTTP all'API Quotable
+                    axios.get('https://api.quotable.io/random')
+                        .then(risposta => {
+                            const randomQuote = risposta.data.content;
+
+                            // Aggiungi la citazione come messaggio ricevuto
+                            this.activeChat.messages.push({
+                                message: randomQuote,
+                                status: 'received',
+                                date: new Date().toLocaleString('it-IT') // Aggiungi la data corrente
+                            });
+                        })
                 }, 1000);
             }
         },
@@ -277,5 +284,7 @@ createApp({
     },
     mounted() { //Richiamo la funzione nel mounted per far sparire la splash page
         this.hideSplashPage();
+
+
     }
 }).mount("#app");
