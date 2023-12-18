@@ -226,11 +226,23 @@ img {
 }
 
 /*************************************************
-    Mex di benvenuto
+    MEX DI BENVENUTO ALLA CHAT NON SELEZIONATA
  *************************************************/
 .messaggio_di_benvenuto p {
     padding: 8px;
     margin: 0;
     text-align: center;
     font-size: large;
+}
+
+/*************************************************
+    SPLASH PAGE
+ *************************************************/
+.splash_page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #009688;
 }

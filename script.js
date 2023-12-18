@@ -25,6 +25,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            splashPage: true,
             newMessage: '',
             searchQuery: '',
             activeChat: ({
@@ -260,8 +261,13 @@ createApp({
                 }, 1000);
             }
         },
+        hideSplashPage() {
+            setTimeout(() => {
+                this.splashPage = false;
+            }, 1500);
+        }
     },
     mounted() {
-
+        this.hideSplashPage();
     }
 }).mount("#app");

@@ -33,6 +33,10 @@
 <body>
     <div id="app"> <!-- mount 4 vuejs -->
 
+        <div v-if="splashPage" class="splash_page"> <!-- Splash Page -->
+            <h1>Boolzapp By Giuseppe Riccardo Pugliese</h1>
+        </div>
+
         <div id="wrapper">
 
             <div class="parte-verde"> <!-- Parte di dietro verde -->
@@ -114,6 +118,7 @@
                 <div class="right-side">
 
                     <div v-if="!activeChat.name" class="messaggio_di_benvenuto">
+                        <!-- Se non e' selezionata una chat mi mostri il msg di benvenuto -->
                         <p>Benvenuto nella nostra app! Seleziona un contatto dalla lista per visualizzarne i messaggi.
                         </p>
                     </div>
