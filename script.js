@@ -25,6 +25,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            contact: '',
             newMessage: '',
             searchQuery: '',
             activeChat: ({
@@ -208,6 +209,20 @@ createApp({
                 contact.name.toLowerCase().includes(this.searchQuery.toLowerCase())
             );
         },
+        filteredContactsShowLastMsgAndDate() {
+            /*
+            map è una funzione di array che viene utilizzata per creare un nuovo array contenente i risultati di chiamate di una funzione su ogni elemento dell'array originale. La funzione di callback fornita a map viene chiamata una volta per ogni elemento dell'array, in ordine, e il risultato di ciascuna chiamata viene utilizzato per costruire il nuovo array.
+            */
+            return this.filteredContacts.map(currentContact => {
+                const lastMsg = currentContact.messages[currentContact.messages.length - 1];
+                return {
+                    //Clono l'obj contact (...)
+                    ...currentContact,
+                    lastMsgText: lastMsg ? lastMsg.message : '',
+                    lastMsgDate: lastMsg ? lastMsg.date : '',
+                }
+            })
+        }
     },
     methods: {
         currentChat(index) {    //Milestone 2

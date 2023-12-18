@@ -91,58 +91,19 @@
                         <ul class="list-unstyled m-0">
 
                             <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2"
-                                v-for="(currentContact, i) in filteredContacts" :key="i" @click="currentChat(i)">
+                                v-for="(currentContact, i) in filteredContactsShowLastMsgAndDate" :key="i"
+                                @click="currentChat(i)">
                                 <div class="d-flex">
                                     <img :src="currentContact.avatar" alt="">
                                     <div class="ms-3">
                                         <span class="d-block">{{currentContact.name}}</span>
-                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
+                                        <span class="ms_fs-12_opacity03">{{currentContact.lastMsgText}}</span>
                                     </div>
                                 </div>
                                 <div>
-                                    <span class="ms_fs-12_opacity03">12:00</span>
+                                    <span class="ms_fs-12_opacity03">{{currentContact.lastMsgDate}}</span>
                                 </div>
                             </li>
-
-                            <!-- <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
-                                <div class="d-flex">
-                                    <img src="Img/avatar_2.jpg" alt="">
-                                    <div class="ms-3">
-                                        <span class="d-block">Fabio</span>
-                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="ms_fs-12_opacity03">12:00</span>
-                                </div>
-                            </li>
-
-                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
-                                <div class="d-flex">
-                                    <img src="Img/avatar_3.jpg" alt="">
-                                    <div class="ms-3">
-                                        <span class="d-block">Samuele</span>
-                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="ms_fs-12_opacity03">12:00</span>
-                                </div>
-                            </li>
-
-
-                            <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2">
-                                <div class="d-flex">
-                                    <img src="Img/avatar_4.jpg" alt="">
-                                    <div class="ms-3">
-                                        <span class="d-block">Alessandro B.</span>
-                                        <span class="ms_fs-12_opacity03">Ultimo messaggio inviato</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <span class="ms_fs-12_opacity03">12:00</span>
-                                </div>
-                            </li> -->
 
                         </ul>
                     </div>
