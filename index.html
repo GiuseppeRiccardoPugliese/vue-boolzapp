@@ -83,7 +83,7 @@
                                     class="fa-solid fa-magnifying-glass"></i></button>
                             <input type="text" class="form-control border-light"
                                 placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon"
-                                aria-describedby="button-addon1">
+                                aria-describedby="button-addon1" v-model="searchQuery">
                         </div>
                     </div>
 
@@ -91,7 +91,7 @@
                         <ul class="list-unstyled m-0">
 
                             <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2"
-                                v-for="(currentContact, i) in contacts" :key="i" @click="currentChat(i)">
+                                v-for="(currentContact, i) in filteredContacts" :key="i" @click="currentChat(i)">
                                 <div class="d-flex">
                                     <img :src="currentContact.avatar" alt="">
                                     <div class="ms-3">

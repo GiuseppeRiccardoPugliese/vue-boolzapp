@@ -26,10 +26,11 @@ createApp({
     data() {
         return {
             newMessage: '',
+            searchQuery: '',
             activeChat: ({
                 name: '',
                 avatar: '',
-                messages: ''
+                messages: []
             }),
             // chats: ['Michele', 'img/avatar_1.jpg'],
             contacts: [
@@ -196,6 +197,17 @@ createApp({
                 }
             ]
         }
+    },
+    /*
+    In Vue.js, computed è una sezione in cui è possibile definire delle proprietà calcolate. Le proprietà calcolate sono dipendenti da una o più proprietà reattive, e vengono ricalcolate automaticamente ogni volta che una delle dipendenze cambia. Questo è particolarmente utile quando si desidera ottenere un valore derivato da altri dati reattivi, e si vuole che Vue gestisca automaticamente l'aggiornamento quando le dipendenze cambiano.
+    */
+    computed: {
+        // Filtra i contatti in base alla query di ricerca
+        filteredContacts() {
+            return this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+            );
+        },
     },
     methods: {
         currentChat(index) {    //Milestone 2
