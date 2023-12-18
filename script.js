@@ -25,7 +25,6 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            contact: '',
             newMessage: '',
             searchQuery: '',
             activeChat: ({

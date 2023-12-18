@@ -224,3 +224,13 @@ img {
     font-size: 12px;
     opacity: 0.3;
 }
+
+/*************************************************
+    Mex di benvenuto
+ *************************************************/
+.messaggio_di_benvenuto p {
+    padding: 8px;
+    margin: 0;
+    text-align: center;
+    font-size: large;
+}

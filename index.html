@@ -113,7 +113,12 @@
                 <!-- Parte di destra -->
                 <div class="right-side">
 
-                    <div class="user light-gray"> <!-- Parte di sopra inerente al contatto-->
+                    <div v-if="!activeChat.name" class="messaggio_di_benvenuto">
+                        <p>Benvenuto nella nostra app! Seleziona un contatto dalla lista per visualizzarne i messaggi.
+                        </p>
+                    </div>
+
+                    <div v-else class="user light-gray"> <!-- Parte di sopra inerente al contatto-->
                         <div class="d-flex">
                             <img :src="activeChat.avatar" alt="">
                             <div class="ms-3 d-flex flex-column justify-content-center lh-sm">
