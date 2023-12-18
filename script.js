@@ -35,7 +35,8 @@ createApp({
             activeChat: ({
                 name: '',
                 avatar: '',
-                messages: []
+                messages: [],
+                status: 'online',
             }),
             // chats: ['Michele', 'img/avatar_1.jpg'],
             contacts: [
@@ -252,11 +253,18 @@ createApp({
                 // Aggiungo il nuovo messaggio all'interno di activeChat, ovvero i dati forniti prima per ogni chat (nome, foto e messaggi)
                 this.activeChat.messages.push(newMsg);
 
+                //Imposto lo stato su "sta scrivendo..."
+                this.activeChat.status = "sta scrivendo...";
+
                 // Pulisco l'input dopo che il messaggio e' stato inviato
                 this.newMessage = '';
 
+                // Imposta l'orario corrente per l'ultimo messaggio inviato
+                this.orarioCorrente = DateTime.local().toLocaleString(DateTime.TIME_SIMPLE);
+
                 // Simulazione della risposta dopo il delay
                 setTimeout(() => {
+
                     // Effettua una richiesta HTTP all'API Quotable
                     axios.get('https://api.quotable.io/random')
                         .then(risposta => {
@@ -266,9 +274,17 @@ createApp({
                             this.activeChat.messages.push({
                                 message: randomQuote,
                                 status: 'received',
-                                date: new Date().toLocaleString('it-IT') // Aggiungi la data corrente formattata secondo l'orario italiano
+                                date: new Date().toLocaleString('it-IT')
                             });
-                        })
+
+                            // Dopo aver ricevuto la risposta, imposto lo stato su "online"
+                            this.activeChat.status = 'online';
+
+                            // Visualizzo "Ultimo accesso alle: " dopo un paio di secondi
+                            setTimeout(() => {
+                                this.activeChat.status = `Ultimo accesso alle ${this.orarioCorrente}`;
+                            }, 2000);
+                        });
                 }, 1000);
             }
         },
@@ -285,15 +301,13 @@ createApp({
             wrapper.classList.toggle('dark-mode', this.darkMode);
         },
         currentTimeOnMsg() {
-            const currentHour = DateTime.local().hour;
-            const currentMinutes = DateTime.local().minute;
-            const currentSeconds = DateTime.local().second;
-            this.orarioCorrente = `${currentHour} : ${currentMinutes} : ${currentSeconds}`;
+            const currentDateTime = DateTime.local();
+            const formattedTime = currentDateTime.toFormat('HH:mm:ss');
+            this.orarioCorrente = formattedTime;
         }
 
     },
     mounted() { //Richiamo la funzione nel mounted per far sparire la splash page
         this.hideSplashPage();
-        this.currentTimeOnMsg();
     }
 }).mount("#app");
