@@ -242,7 +242,13 @@ img {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #009688;
+    color: white;
+}
+
+.splash_page small {
+    color: black;
 }
