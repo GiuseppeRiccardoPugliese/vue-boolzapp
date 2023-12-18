@@ -26,6 +26,8 @@ const { DateTime } = luxon; //Dichiarazione libreria Luxon
 createApp({
     data() {
         return {
+            orarioVecchio: true,
+            orarioCorrente: '',
             darkMode: false,
             splashPage: true,
             newMessage: '',
@@ -285,11 +287,13 @@ createApp({
         currentTimeOnMsg() {
             const currentHour = DateTime.local().hour;
             const currentMinutes = DateTime.local().minute;
-            return `${currentHour} : ${currentMinutes}`;
+            const currentSeconds = DateTime.local().second;
+            this.orarioCorrente = `${currentHour} : ${currentMinutes} : ${currentSeconds}`;
         }
 
     },
     mounted() { //Richiamo la funzione nel mounted per far sparire la splash page
         this.hideSplashPage();
+        this.currentTimeOnMsg();
     }
 }).mount("#app");

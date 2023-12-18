@@ -159,7 +159,10 @@
                             <div
                                 :class="{ 'offset-7 col-5 text-break msg_spedito': message.status === 'sent', 'col-5 msg_ricevuto': message.status === 'received' }">
                                 <span class="">{{message.message}}</span>
-                                <span class="msg_time ms_fs-12_opacity03"> {{currentTimeOnMsg()}}
+                                <span v-if="orarioVecchio" class="msg_time ms_fs-12_opacity03"> {{message.date}}
+                                </span>
+                                <span v-else-if="!orarioVecchio" class="msg_time ms_fs-12_opacity03">
+                                    {{orarioCorrente}}
                                 </span>
                             </div>
                         </div>
