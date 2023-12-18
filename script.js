@@ -21,6 +21,7 @@ Visualizzazione ora e ultimo messaggio inviato/ricevuto nella lista dei contatti
 
 
 const { createApp } = Vue;
+const { DateTime } = luxon; //Dichiarazione libreria Luxon
 
 createApp({
     data() {
@@ -263,7 +264,7 @@ createApp({
                             this.activeChat.messages.push({
                                 message: randomQuote,
                                 status: 'received',
-                                date: new Date().toLocaleString('it-IT') // Aggiungi la data corrente
+                                date: new Date().toLocaleString('it-IT') // Aggiungi la data corrente formattata secondo l'orario italiano
                             });
                         })
                 }, 1000);
@@ -281,10 +282,14 @@ createApp({
             //toggle Se la classe e' gia' esistente la rimuovo e viceversa
             wrapper.classList.toggle('dark-mode', this.darkMode);
         },
+        currentTimeOnMsg() {
+            const currentHour = DateTime.local().hour;
+            const currentMinutes = DateTime.local().minute;
+            return `${currentHour} : ${currentMinutes}`;
+        }
+
     },
     mounted() { //Richiamo la funzione nel mounted per far sparire la splash page
         this.hideSplashPage();
-
-
     }
 }).mount("#app");

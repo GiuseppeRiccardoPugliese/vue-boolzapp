@@ -18,12 +18,14 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- VUE CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- Il mio foglio di stile -->
-    <link rel="stylesheet" href="stylesheet.css">
+    <!-- Inclusione della libreria Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <!-- Inclusione di axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"
         integrity="sha512-b94Z6431JyXY14iSXwgzeZurHHRNkLt9d6bAHt7BZT38eqV+GyngIi/tVye4jBKPYQ2lBdRs0glww4fmpuLRwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Il mio foglio di stile -->
+    <link rel="stylesheet" href="stylesheet.css">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="Img/favicon-64x64.ico">
 
@@ -152,25 +154,16 @@
                     </div>
 
                     <div class="message_container"> <!-- Inda Chat -->
+
                         <div class="row mb-2" v-for="(message, index) in activeChat.messages" :key="index">
                             <div
-                                :class="{ 'offset-7 col-5 msg_spedito': message.status === 'sent', 'col-5 msg_ricevuto': message.status === 'received' }">
-                                <span>{{message.message}}</span>
-                                <span class="msg_time ms_fs-12_opacity03">15:30</span>
+                                :class="{ 'offset-7 col-5 text-break msg_spedito': message.status === 'sent', 'col-5 msg_ricevuto': message.status === 'received' }">
+                                <span class="">{{message.message}}</span>
+                                <span class="msg_time ms_fs-12_opacity03"> {{currentTimeOnMsg()}}
+                                </span>
                             </div>
                         </div>
-                        <!-- <div class="row mb-2">
-                            <div class="offset-7 col-5 msg_spedito">
-                                <span>Hai portato a spasso il cane?</span>
-                                <span class="msg_time ms_fs-12_opacity03">15:50</span>
-                            </div>
-                        </div> -->
-                        <!-- <div class="row mb-2">
-                            <div class="col-5 msg_ricevuto">
-                                <span>Tutto fatto!</span>
-                                <span class="msg_time ms_fs-12_opacity03">16:15</span>
-                            </div>
-                        </div> -->
+
                     </div>
 
                     <div class="send_message light-gray"> <!-- Bottom Bar for msg -->
