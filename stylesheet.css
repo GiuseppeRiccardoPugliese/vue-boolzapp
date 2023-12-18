@@ -290,6 +290,11 @@ img {
     background-color: rgba(0, 150, 135, 0.4);
 }
 
+/* Hover sulle chat per la darkmode */
+.dark-mode .chats li:hover {
+    background-color: #4a4949;
+}
+
 /* Dark mode icon in alto a destra */
 .dark-mode-toggle {
     position: fixed;
