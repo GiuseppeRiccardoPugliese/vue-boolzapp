@@ -25,6 +25,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            darkMode: false,
             splashPage: true,
             newMessage: '',
             searchQuery: '',
@@ -261,13 +262,20 @@ createApp({
                 }, 1000);
             }
         },
-        hideSplashPage() {
+        hideSplashPage() { //Splash Page setup
             setTimeout(() => {
+                //La reimposto su false per nasconderla
                 this.splashPage = false;
             }, 1500);
-        }
+        },
+        putDarkMode() { //Dark Mode setup
+            this.darkMode = !this.darkMode;
+            const wrapper = document.getElementById('wrapper');
+            //toggle Se la classe e' gia' esistente la rimuovo e viceversa
+            wrapper.classList.toggle('dark-mode', this.darkMode);
+        },
     },
-    mounted() {
+    mounted() { //Richiamo la funzione nel mounted per far sparire la splash page
         this.hideSplashPage();
     }
 }).mount("#app");

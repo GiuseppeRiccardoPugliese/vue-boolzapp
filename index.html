@@ -38,7 +38,13 @@
             <small>By Giuseppe Riccardo Pugliese&#128522;</small>
         </div>
 
-        <div id="wrapper">
+        <div id="wrapper" :class="!splashPage ? 'd-block' : 'd-none'"> <!-- WRAPPER & condizione per la splashpage -->
+
+            <div @click="putDarkMode" class="dark-mode-toggle"> <!-- Dark Mode -->
+
+                <i :class="darkMode ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+
+            </div>
 
             <div class="parte-verde"> <!-- Parte di dietro verde -->
 
@@ -82,7 +88,7 @@
                         </div>
                     </div>
 
-                    <div class="search_chat bg-light"> <!-- Search Bar -->
+                    <div class="search_chat ms_bg-light"> <!-- Search Bar -->
                         <div class="input-group">
                             <button class="btn bg-white border border-light px-4" type="button" id="button-addon1"><i
                                     class="fa-solid fa-magnifying-glass"></i></button>
@@ -93,7 +99,7 @@
                     </div>
 
                     <div class="chats"> <!-- Chat dei contatti -->
-                        <ul class="list-unstyled m-0">
+                        <ul class="list-unstyled m-0 border-1 border-top">
 
                             <li class="d-flex justify-content-between lh-sm border-bottom border-1  p-2"
                                 v-for="(currentContact, i) in filteredContactsShowLastMsgAndDate" :key="i"

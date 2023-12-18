@@ -217,6 +217,10 @@ img {
     color: black;
 }
 
+.ms_bg-light {
+    background-color: #f8f9fa;
+}
+
 /*************************************************
     UTILITIES
  *************************************************/
@@ -251,4 +255,48 @@ img {
 
 .splash_page small {
     color: black;
+}
+
+/*************************************************
+    DARK MODE & LIGHT MODE
+ *************************************************/
+/* Dark mode */
+.dark-mode {
+    background-color: #333;
+    color: black;
+}
+
+/* Dark mode setup all'interno della chat corrente */
+.dark-mode .message_container {
+    background-image: url(img/bg_chat-dark.png);
+    background-color: #333;
+}
+
+/* Dark mode setup per le chat a sinistra & Sofia */
+.dark-mode .chats ul,
+.dark-mode .light-gray,
+.dark-mode .search_chat.ms_bg-light {
+    color: white;
+    background: #333;
+}
+
+/* Dark mode setup per il bg sotto grigio */
+.dark-mode .parte-grigia {
+    background-color: gray;
+}
+
+/* Dark mode setup per il bg sotto verde*/
+.dark-mode .parte-verde {
+    background-color: rgba(0, 150, 135, 0.4);
+}
+
+/* Dark mode icon in alto a destra */
+.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    color: black;
+    z-index: 200;
 }
