@@ -234,10 +234,16 @@ createApp({
             // this.chats.splice(0, 1, this.contacts[index].name);
             // this.chats.splice(1, 1);
             // this.chats.push(this.contacts[index].avatar);
+            // this.activeChat = {
+            //     name: this.contacts[index].name,
+            //     avatar: this.contacts[index].avatar,
+            //     messages: this.contacts[index].messages,
+            // };
             this.activeChat = {
-                name: this.contacts[index].name,
-                avatar: this.contacts[index].avatar,
-                messages: this.contacts[index].messages,
+                name: this.filteredContactsShowLastMsgAndDate[index].name,
+                avatar: this.filteredContactsShowLastMsgAndDate[index].avatar,
+                messages: this.filteredContactsShowLastMsgAndDate[index].messages,
+                status: this.filteredContactsShowLastMsgAndDate[index].status,
             };
         },
         addMessage() { //Milestone 3
