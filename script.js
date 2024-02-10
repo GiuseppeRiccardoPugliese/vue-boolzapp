@@ -272,9 +272,9 @@ createApp({
                 setTimeout(() => {
 
                     // Effettua una richiesta HTTP all'API Quotable
-                    axios.get('https://api.quotable.io/random')
+                    axios.get('https://api.kanye.rest/')
                         .then(risposta => {
-                            const randomQuote = risposta.data.content;
+                            const randomQuote = risposta.data.quote;
 
                             // Aggiungi la citazione come messaggio ricevuto
                             this.activeChat.messages.push({
